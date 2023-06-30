@@ -1,0 +1,6 @@
+import sys
+sys.path.append('/Users/sarhangsaid/J.V/.venv/lib/python3.11/site-packages')
+
+import speech_recognition as sr
+
+# Rest of your code

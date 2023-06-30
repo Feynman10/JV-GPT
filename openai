@@ -1,0 +1,14 @@
+def get_command():
+    with sr.Microphone() as source:
+        print("Listening:")
+        r.pause_threshold = 1 # This sets the amount of silence the recognizer will tolerate before stopping.
+        audio = r.listen(source) # This line records audio from the source until silence is detected.
+    try:
+        print("Recognizing:")
+        query = r.recognize_google(audio, language='en-in') # Here, we're using Google's free speech recognition API to recognize the speech in the audio.
+        print(f"User said: {query}\n")
+    except Exception as e:
+        print(e)
+        print("Say that again please...")
+        return "None"
+    return query
